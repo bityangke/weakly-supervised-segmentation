@@ -1,0 +1,5 @@
+VOC2012
+*/output
+.vscode
+__pycache__
+*/checkpoints
