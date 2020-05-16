@@ -1,4 +1,4 @@
-![image not found](https://github.com/kobusvdwalt/weakly-supervised-segmentation/blob/master/landing/landing.jpg?raw=true)
+![image not found](https://github.com/kobusvdwalt/weakly-supervised-segmentation/blob/master/_landing_page/landing.jpg?raw=true)
 
 # Weakly Supervised Semantic Segmentation
 
