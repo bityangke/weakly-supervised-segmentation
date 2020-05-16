@@ -37,4 +37,4 @@ class Vgg16(torch.nn.Module):
         return x
 
 vgg = Vgg16()
-vgg.load_state_dict(torch.load('checkpoints/vgg_cam.pt'))
+#vgg.load_state_dict(torch.load('checkpoints/vgg_cap.pt'))

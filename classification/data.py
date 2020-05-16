@@ -32,7 +32,7 @@ class PascalVOCClassification(Dataset):
         self.classList = classListArray
         self.classCount = len(self.classList)
 
-        f = open('../data/' + source + '.txt', 'r')
+        f = open('./data/' + source + '.txt', 'r')
         self.labels = f.readlines()
         self.total = len(self.labels)
         self.source = source

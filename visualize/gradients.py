@@ -1,5 +1,5 @@
 from torch.utils.data import DataLoader
-from data import PascalVOCDataset
+from data import PascalVOCClassification
 from data import classListArray
 from vgg_cam import vgg
 
@@ -9,7 +9,7 @@ import torch
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-pascal_val = PascalVOCDataset(source='val')
+pascal_val = PascalVOCClassification(source='val')
 data = DataLoader(pascal_val, batch_size=16, shuffle=True, num_workers=0)
 
 vgg.train()

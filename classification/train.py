@@ -1,7 +1,10 @@
 if __name__ == '__main__':
+    import sys, os
+    sys.path.insert(0, os.path.abspath('./models'))
+
     from torch.utils.data import DataLoader
-    from data import PascalVOCDataset
-    from vgg_cam import vgg
+    from data import PascalVOCClassification
+    from vgg_gap import vgg
 
     import torch
     import torch.optim as optim
@@ -17,8 +20,8 @@ if __name__ == '__main__':
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     # Set up dataloader
-    pascal_train = PascalVOCDataset(source='train')
-    pascal_val = PascalVOCDataset(source='val')
+    pascal_train = PascalVOCClassification(source='train')
+    pascal_val = PascalVOCClassification(source='val')
 
     dataloaders = {
         'train': DataLoader(pascal_train, batch_size=16, shuffle=True, num_workers=6),
@@ -78,7 +81,7 @@ if __name__ == '__main__':
                 if phase == 'val' and epoch_acc > best_acc:
                     best_acc = epoch_acc
                     best_model_wts = copy.deepcopy(model.state_dict())
-                    torch.save(model.state_dict(), './checkpoints/vgg_cam.pt')
+                    torch.save(model.state_dict(), './checkpoints/vgg_gap.pt')
 
     vgg.to(device)
 
